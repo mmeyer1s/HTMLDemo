@@ -1,0 +1,299 @@
+/**
+ * Great Emu War - Game Styles
+ * 
+ * This file contains styles specific to the interactive emu game.
+ * Includes game arena styling, UI overlays, and game-specific animations.
+ * 
+ * Author: Great Emu War Project
+ * Version: 1.0.0
+ */
+
+/* =======================
+   GAME ARENA STYLES
+   ======================= */
+
+/**
+ * Main game arena container
+ * Creates the battlefield where the emu game takes place
+ */
+.game-arena {
+    background: linear-gradient(135deg, #bbf7d0 0%, #86efac 100%);
+    border: 4px solid #22c55e;
+    border-radius: 1rem;
+    height: 24rem; /* 384px */
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    user-select: none;
+}
+
+/**
+ * Game arena focus state
+ * Provides visual feedback when the game area is focused for keyboard input
+ */
+.game-arena:focus {
+    outline: 3px solid #f59e0b;
+    outline-offset: 2px;
+}
+
+/* =======================
+   GAME ELEMENT STYLES
+   ======================= */
+
+/**
+ * Player emu styling
+ * The main character controlled by the player
+ */
+.player-emu {
+    font-size: 2rem;
+    transition: all 0.1s ease-out;
+    z-index: 10;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/**
+ * Game crop styling
+ * Wheat crops that need to be destroyed
+ */
+.game-crop {
+    font-size: 1.5rem;
+    transition: all 0.3s ease-out;
+    opacity: 0.7;
+}
+
+/**
+ * Destroyed crop animation
+ * Smooth fade-out when crops are destroyed
+ */
+.game-crop.destroyed {
+    opacity: 0;
+    transform: scale(0.5) rotate(45deg);
+}
+
+/**
+ * Game soldier styling
+ * Military personnel that shoot at emus
+ */
+.game-soldier {
+    font-size: 1.5rem;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/**
+ * Bullet styling
+ * Projectiles fired by soldiers
+ */
+.game-bullet {
+    width: 8px;
+    height: 4px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    border-radius: 2px;
+    box-shadow: 0 0 4px rgba(251, 191, 36, 0.6);
+}
+
+/**
+ * Other emu styling
+ * AI-controlled emus that provide distraction
+ */
+.other-emu {
+    font-size: 1.5rem;
+    animation: pulse 2s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+/* =======================
+   GAME UI OVERLAYS
+   ======================= */
+
+/**
+ * Game HUD (Heads-Up Display)
+ * Shows score, lives, and progress information
+ */
+.game-hud {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 0.875rem;
+}
+
+/**
+ * Game modal overlay
+ * Background overlay for game state modals
+ */
+.game-modal-overlay {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+}
+
+/**
+ * Game modal content
+ * Content container for victory/defeat/instruction modals
+ */
+.game-modal-content {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    max-width: 28rem;
+    width: 100%;
+}
+
+/* =======================
+   GAME ANIMATIONS
+   ======================= */
+
+/**
+ * Moving emu animation
+ * Bounce effect when the player emu is moving
+ */
+.emu-moving {
+    animation: emuMove 0.2s ease-in-out;
+}
+
+@keyframes emuMove {
+    0%, 100% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-3px); 
+    }
+}
+
+/**
+ * Hit animation
+ * Visual feedback when the player gets hit by a bullet
+ */
+.emu-hit {
+    animation: emuHit 0.5s ease-out;
+}
+
+@keyframes emuHit {
+    0% { 
+        transform: scale(1); 
+        filter: brightness(1); 
+    }
+    25% { 
+        transform: scale(1.1); 
+        filter: brightness(1.5) hue-rotate(0deg); 
+    }
+    50% { 
+        transform: scale(0.95); 
+        filter: brightness(0.8) hue-rotate(180deg); 
+    }
+    100% { 
+        transform: scale(1); 
+        filter: brightness(1); 
+    }
+}
+
+/**
+ * Victory celebration animation
+ * Celebratory effect for winning the game
+ */
+.victory-celebration {
+    animation: victoryCelebration 1s ease-in-out;
+}
+
+@keyframes victoryCelebration {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg); 
+    }
+    25% { 
+        transform: scale(1.1) rotate(5deg); 
+    }
+    50% { 
+        transform: scale(1.2) rotate(-5deg); 
+    }
+    75% { 
+        transform: scale(1.1) rotate(3deg); 
+    }
+}
+
+/* =======================
+   RESPONSIVE GAME STYLES
+   ======================= */
+
+/**
+ * Mobile game adjustments
+ * Optimizations for smaller screens
+ */
+@media (max-width: 768px) {
+    .game-arena {
+        height: 20rem; /* Reduce height on mobile */
+    }
+    
+    .player-emu {
+        font-size: 1.75rem; /* Slightly smaller on mobile */
+    }
+    
+    .game-crop,
+    .game-soldier,
+    .other-emu {
+        font-size: 1.25rem; /* Smaller game elements on mobile */
+    }
+    
+    .game-hud {
+        font-size: 0.75rem; /* Smaller HUD text on mobile */
+        padding: 0.5rem;
+    }
+}
+
+/**
+ * Large screen game enhancements
+ * Optimizations for larger displays
+ */
+@media (min-width: 1200px) {
+    .game-arena {
+        height: 28rem; /* Larger arena on big screens */
+    }
+    
+    .player-emu {
+        font-size: 2.25rem; /* Larger player character */
+    }
+}
+
+/* =======================
+   ACCESSIBILITY STYLES
+   ======================= */
+
+/**
+ * High contrast mode support
+ * Ensures game remains playable in high contrast mode
+ */
+@media (prefers-contrast: high) {
+    .game-arena {
+        border: 4px solid #000;
+        background: #fff;
+    }
+    
+    .game-bullet {
+        background: #000;
+        box-shadow: none;
+    }
+    
+    .game-hud {
+        background: #fff;
+        border: 2px solid #000;
+    }
+}
+
+/**
+ * Reduced motion support
+ * Respects user's preference for reduced motion
+ */
+@media (prefers-reduced-motion: reduce) {
+    .emu-bounce,
+    .other-emu,
+    .emu-moving,
+    .emu-hit,
+    .victory-celebration {
+        animation: none;
+    }
+    
+    .player-emu,
+    .game-crop {
+        transition: none;
+    }
+}

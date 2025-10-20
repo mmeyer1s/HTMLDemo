@@ -1,0 +1,181 @@
+/**
+ * Great Emu War - Main Stylesheet
+ * 
+ * This file contains the core styles for the Great Emu War interactive website.
+ * It includes custom fonts, animations, and layout styles that complement Tailwind CSS.
+ * 
+ * Author: Great Emu War Project
+ * Version: 1.0.0
+ */
+
+/* =======================
+   FONT IMPORTS
+   ======================= */
+
+/* Import Google Fonts for typography */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* =======================
+   CUSTOM FONT CLASSES
+   ======================= */
+
+/**
+ * Cinzel font for headings and titles
+ * Used for: Main headings, section titles, decorative text
+ */
+.font-cinzel { 
+    font-family: 'Cinzel', serif; 
+}
+
+/**
+ * Inter font for body text
+ * Used for: Body text, UI elements, general content
+ */
+.font-inter { 
+    font-family: 'Inter', sans-serif; 
+}
+
+/* =======================
+   CUSTOM ANIMATIONS
+   ======================= */
+
+/**
+ * Emu bouncing animation
+ * Creates a playful bouncing effect for emu characters
+ */
+.emu-bounce {
+    animation: emuBounce 2s ease-in-out infinite;
+}
+
+@keyframes emuBounce {
+    0%, 20%, 50%, 80%, 100% { 
+        transform: translateY(0); 
+    }
+    40% { 
+        transform: translateY(-10px); 
+    }
+    60% { 
+        transform: translateY(-5px); 
+    }
+}
+
+/**
+ * Fade in up animation
+ * Used for smooth entrance animations on page load
+ */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/**
+ * Counter animation transition
+ * Smooth transitions for animated counters
+ */
+.counter-animation {
+    transition: all 0.3s ease-in-out;
+}
+
+/* =======================
+   COMPONENT STYLES
+   ======================= */
+
+/**
+ * Timeline gradient line
+ * Creates the central timeline connector with gradient colors
+ */
+.timeline-line {
+    background: linear-gradient(to bottom, #f59e0b, #dc2626);
+}
+
+/**
+ * Battle card hover effects
+ * Interactive hover states for timeline battle cards
+ */
+.battle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/**
+ * Emu silhouette background
+ * SVG-based emu silhouette for decorative elements
+ */
+.emu-silhouette {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20 80 Q15 70 20 60 Q25 50 30 45 Q35 40 40 35 Q45 30 50 25 Q55 20 60 25 Q65 30 70 35 Q75 40 80 45 Q85 50 80 60 Q75 70 80 80 L75 85 Q70 90 65 85 Q60 80 55 85 Q50 90 45 85 Q40 80 35 85 Q30 90 25 85 Z' fill='%23374151'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* =======================
+   ALPINE.JS UTILITIES
+   ======================= */
+
+/**
+ * Alpine.js cloak directive
+ * Hides elements until Alpine.js has initialized to prevent flash of unstyled content
+ */
+[x-cloak] {
+    display: none !important;
+}
+
+/* =======================
+   RESPONSIVE UTILITIES
+   ======================= */
+
+/**
+ * Ensure proper focus visibility for accessibility
+ * Improves keyboard navigation experience
+ */
+*:focus {
+    outline: 2px solid #f59e0b;
+    outline-offset: 2px;
+}
+
+/**
+ * Smooth scrolling for the entire document
+ * Enhances user experience when navigating via anchor links
+ */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =======================
+   PRINT STYLES
+   ======================= */
+
+/**
+ * Print-friendly styles
+ * Optimizes the page for printing while maintaining readability
+ */
+@media print {
+    /* Hide interactive elements when printing */
+    .no-print,
+    nav,
+    button,
+    .game-arena {
+        display: none !important;
+    }
+    
+    /* Optimize text for print */
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    /* Ensure good contrast for print */
+    .text-gray-600 {
+        color: #4a5568 !important;
+    }
+}

@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic HTML5 Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Emu War - Australia's Most Unusual Military Campaign</title>
+    
+    <!-- SEO and Social Media Meta Tags -->
+    <meta name="description" content="Experience the Great Emu War of 1932 through an interactive website featuring games, timelines, and historical facts about Australia's most unusual military campaign.">
+    <meta name="keywords" content="Great Emu War, Australia, 1932, military history, interactive game, educational, emus, historical timeline">
+    <meta name="author" content="Great Emu War Project">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="The Great Emu War - Interactive Historical Experience">
+    <meta property="og:description" content="Play as the emus in this interactive retelling of Australia's Great Emu War of 1932.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://greatemuwar.com">
+    <meta property="og:image" content="https://greatemuwar.com/assets/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Great Emu War - Interactive History">
+    <meta name="twitter:description" content="Experience Australia's most unusual military campaign through games and interactive content.">
+    
+    <!-- External CSS and JavaScript Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/game.css">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    
+    <!-- Preconnect to External Domains for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 min-h-screen font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50" x-data="{ scrolled: false }" 
+         @scroll.window="scrolled = window.pageYOffset > 50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-feather text-white text-lg"></i>
+                    </div>
+                    <h1 class="text-2xl font-cinzel font-bold text-gray-800">The Great Emu War</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#timeline" class="text-gray-600 hover:text-amber-600 transition-colors">Timeline</a>
+                    <a href="#statistics" class="text-gray-600 hover:text-amber-600 transition-colors">Statistics</a>
+                    <a href="#emu-game" class="text-gray-600 hover:text-amber-600 transition-colors">Play Game</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-amber-600 transition-colors">Gallery</a>
+                    <a href="pages/about.html" class="text-gray-600 hover:text-amber-600 transition-colors">About</a>
+                    <a href="pages/timeline-detail.html" class="text-gray-600 hover:text-amber-600 transition-colors">Detailed Timeline</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-16 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-amber-100 via-orange-100 to-red-100 opacity-75"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in-up">
+                <div class="mb-8">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 emu-silhouette emu-bounce"></div>
+                        <span class="text-6xl">⚔️</span>
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-tie text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-cinzel font-bold text-gray-800 mb-4">
+                        The Great <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Emu War</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        Australia's most unusual military campaign of 1932, where humans battled 20,000 emus... and lost.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+                        <div class="text-3xl mb-2">📅</div>
+                        <h3 class="font-semibold text-gray-800">Duration</h3>
+                        <p class="text-gray-600">November 1932</p>
+                    </div>
+                    <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+                        <div class="text-3xl mb-2">📍</div>
+                        <h3 class="font-semibold text-gray-800">Location</h3>
+                        <p class="text-gray-600">Western Australia</p>
+                    </div>
+                    <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+                        <div class="text-3xl mb-2">🏆</div>
+                        <h3 class="font-semibold text-gray-800">Winner</h3>
+                        <p class="text-gray-600">The Emus</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="document.getElementById('emu-game').scrollIntoView({ behavior: 'smooth' })" 
+                            class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-green-600 hover:to-emerald-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
+                        🎮 Play as the Emus!
+                    </button>
+                    <button onclick="document.getElementById('timeline').scrollIntoView({ behavior: 'smooth' })" 
+                            class="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-amber-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
+                        📚 Read the Story <i class="fas fa-arrow-down ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-cinzel font-bold text-gray-800 mb-4">Battle Timeline</h2>
+                <p class="text-xl text-gray-600">The complete story of humanity's strangest military defeat</p>
+            </div>
+            
+            <div class="relative" x-data="{ activeEvent: -1 }">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 timeline-line h-full rounded-full"></div>
+                
+                <!-- Timeline Events -->
+                <div class="space-y-16">
+                    <!-- Event 1 -->
+                    <div class="relative flex items-center transition-all duration-500" 
+                         :class="{ 'opacity-100 transform translate-y-0': activeEvent >= 0, 'opacity-30 transform translate-y-4': activeEvent < 0 }"
+                         x-intersect="activeEvent = Math.max(activeEvent, 0)">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="battle-card bg-white border-l-4 border-red-500 p-6 rounded-xl shadow-lg transition-all duration-300">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">The Problem Emerges</h3>
+                                <p class="text-red-600 font-semibold mb-3">October 1932</p>
+                                <p class="text-gray-800 leading-relaxed">After WWI, soldiers were given land in Western Australia for farming. But 20,000 emus migrated through their crops, destroying wheat fields.</p>
+                                <div class="mt-4 flex justify-end">
+                                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">🌾 Crop Destruction</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-red-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="text-6xl">🌾</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 2 -->
+                    <div class="relative flex items-center transition-all duration-500" 
+                         :class="{ 'opacity-100 transform translate-y-0': activeEvent >= 1, 'opacity-30 transform translate-y-4': activeEvent < 1 }"
+                         x-intersect="activeEvent = Math.max(activeEvent, 1)">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="text-6xl">🪖</div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-amber-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="battle-card bg-white border-r-4 border-amber-500 p-6 rounded-xl shadow-lg transition-all duration-300">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Military Called In</h3>
+                                <p class="text-amber-600 font-semibold mb-3">November 2, 1932</p>
+                                <p class="text-gray-800 leading-relaxed">Major G.P.W. Meredith led a military operation with two soldiers, two Lewis machine guns, and 10,000 rounds of ammunition.</p>
+                                <div class="mt-4">
+                                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">⚔️ Operation Begin</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 3 -->
+                    <div class="relative flex items-center transition-all duration-500" 
+                         :class="{ 'opacity-100 transform translate-y-0': activeEvent >= 2, 'opacity-30 transform translate-y-4': activeEvent < 2 }"
+                         x-intersect="activeEvent = Math.max(activeEvent, 2)">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="battle-card bg-white border-l-4 border-orange-500 p-6 rounded-xl shadow-lg transition-all duration-300">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">First Encounter</h3>
+                                <p class="text-orange-600 font-semibold mb-3">November 2, 1932</p>
+                                <p class="text-gray-800 leading-relaxed">The first battle began! But the emus proved surprisingly tactical, scattering when under fire and regrouping quickly.</p>
+                                <div class="mt-4 flex justify-end">
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">🏃 Emu Tactics</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="text-6xl">💥</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 4 -->
+                    <div class="relative flex items-center transition-all duration-500" 
+                         :class="{ 'opacity-100 transform translate-y-0': activeEvent >= 3, 'opacity-30 transform translate-y-4': activeEvent < 3 }"
+                         x-intersect="activeEvent = Math.max(activeEvent, 3)">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="text-6xl">🔫</div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-yellow-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="battle-card bg-white border-r-4 border-yellow-500 p-6 rounded-xl shadow-lg transition-all duration-300">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Machine Gun Jams</h3>
+                                <p class="text-yellow-600 font-semibold mb-3">November 4, 1932</p>
+                                <p class="text-gray-800 leading-relaxed">After only 12 birds killed in several days, the machine gun jammed during a crucial encounter with a large flock.</p>
+                                <div class="mt-4">
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">🔧 Equipment Failure</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 5 -->
+                    <div class="relative flex items-center transition-all duration-500" 
+                         :class="{ 'opacity-100 transform translate-y-0': activeEvent >= 4, 'opacity-30 transform translate-y-4': activeEvent < 4 }"
+                         x-intersect="activeEvent = Math.max(activeEvent, 4)">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="battle-card bg-white border-l-4 border-green-500 p-6 rounded-xl shadow-lg transition-all duration-300">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Retreat & Reinforcements</h3>
+                                <p class="text-green-600 font-semibold mb-3">November 8, 1932</p>
+                                <p class="text-gray-800 leading-relaxed">The military withdrew, but farmers demanded action. The operation resumed with new tactics and equipment.</p>
+                                <div class="mt-4 flex justify-end">
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">🔄 Round Two</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="text-6xl">🔁</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 6 -->
+                    <div class="relative flex items-center transition-all duration-500" 
+                         :class="{ 'opacity-100 transform translate-y-0': activeEvent >= 5, 'opacity-30 transform translate-y-4': activeEvent < 5 }"
+                         x-intersect="activeEvent = Math.max(activeEvent, 5)">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="text-6xl">🏳️</div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gray-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="battle-card bg-white border-r-4 border-gray-500 p-6 rounded-xl shadow-lg transition-all duration-300">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Final Defeat</h3>
+                                <p class="text-gray-600 font-semibold mb-3">December 10, 1932</p>
+                                <p class="text-gray-800 leading-relaxed">After weeks of battle, the military officially withdrew. The emus had won, with most of the flock still intact and crops still being destroyed.</p>
+                                <div class="mt-4">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">🏆 Emu Victory</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="py-20 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-cinzel font-bold text-gray-800 mb-4">War Statistics</h2>
+                <p class="text-xl text-gray-600">The numbers behind this legendary conflict</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" x-data="{ 
+                stats: [
+                    { value: 20000, displayValue: 0, label: 'Emus Involved', icon: '🦆', color: 'from-blue-400 to-blue-600', animated: false },
+                    { value: 10000, displayValue: 0, label: 'Bullets Fired', icon: '🔫', color: 'from-red-400 to-red-600', animated: false },
+                    { value: 986, displayValue: 0, label: 'Confirmed Kills', icon: '💀', color: 'from-gray-400 to-gray-600', animated: false },
+                    { value: 3, displayValue: 0, label: 'Soldiers Deployed', icon: '🪖', color: 'from-green-400 to-green-600', animated: false }
+                ],
+                progressBars: [false, false, false, false],
+                startAnimation() {
+                    this.stats.forEach((stat, index) => {
+                        if (stat.animated) return;
+                        stat.animated = true;
+                        
+                        // Animate progress bar
+                        setTimeout(() => {
+                            this.progressBars[index] = true;
+                        }, index * 200);
+                        
+                        // Animate counter
+                        const duration = 2000;
+                        const steps = 60;
+                        const increment = stat.value / steps;
+                        let current = 0;
+                        let step = 0;
+                        
+                        const timer = setInterval(() => {
+                            step++;
+                            current = (step / steps) * stat.value;
+                            
+                            if (step >= steps) {
+                                stat.displayValue = stat.value;
+                                clearInterval(timer);
+                            } else {
+                                stat.displayValue = Math.floor(current);
+                            }
+                        }, duration / steps);
+                    });
+                }
+            }" x-intersect.once="startAnimation()">
+                <template x-for="(stat, index) in stats" :key="index">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="text-center">
+                            <div class="text-5xl mb-4" x-text="stat.icon"></div>
+                            <div class="text-4xl font-bold mb-2 counter-animation" 
+                                 :class="`text-transparent bg-clip-text bg-gradient-to-r ${stat.color}`"
+                                 x-text="stat.displayValue.toLocaleString()"></div>
+                            <p class="text-gray-600 font-medium" x-text="stat.label"></p>
+                        </div>
+                        <div class="mt-6 h-2 rounded-full bg-gray-200 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r transition-all duration-2000 ease-out" 
+                                 :class="stat.color"
+                                 :style="progressBars[index] ? 'width: 100%' : 'width: 0%'"></div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            
+            <!-- Fun Facts -->
+            <div class="mt-16 grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">🎯</span>
+                        Accuracy Rate
+                    </h3>
+                    <div class="text-6xl font-bold text-red-500 mb-2">9.86%</div>
+                    <p class="text-gray-600">That's right - only about 1 in 10 bullets found their target. The emus were surprisingly good at dodging!</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">⏱️</span>
+                        Campaign Duration
+                    </h3>
+                    <div class="text-6xl font-bold text-blue-500 mb-2">6</div>
+                    <p class="text-gray-600">The entire "war" lasted about 6 weeks, with the military actively engaged for only a few days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Emu Game Section -->
+    <section id="emu-game" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-cinzel font-bold text-gray-800 mb-4">Play as the Emus!</h2>
+                <p class="text-xl text-gray-600">Experience the Great Emu War from the winning side</p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl p-8 shadow-xl" 
+                 x-data="emuGame()">
+                <div class="relative">
+                    <!-- Game Arena -->
+                    <div class="bg-gradient-to-br from-green-200 to-green-300 rounded-2xl h-96 relative overflow-hidden shadow-inner border-4 border-green-400 select-none" 
+                         tabindex="0" 
+                         @keydown.window="handleKeyPress($event)"
+                         @click="$el.focus()">
+                        
+                        <!-- Game Background Elements -->
+                        <!-- Wheat Fields -->
+                        <div class="absolute inset-0 opacity-30">
+                            <template x-for="crop in crops" :key="crop.id">
+                                <div class="absolute text-2xl transition-all duration-300" 
+                                     :style="`left: ${crop.x}px; top: ${crop.y}px; opacity: ${crop.destroyed ? 0 : 1}`"
+                                     x-show="!crop.destroyed">🌾</div>
+                            </template>
+                        </div>
+                        
+                        <!-- Soldiers and Bullets -->
+                        <template x-for="soldier in soldiers" :key="soldier.id">
+                            <div class="absolute text-2xl" 
+                                 :style="`left: ${soldier.x}px; top: ${soldier.y}px`">🪖</div>
+                        </template>
+                        
+                        <template x-for="bullet in bullets" :key="bullet.id">
+                            <div class="absolute w-2 h-1 bg-yellow-400 rounded-full" 
+                                 :style="`left: ${bullet.x}px; top: ${bullet.y}px`"></div>
+                        </template>
+                        
+                        <!-- Player Emu -->
+                        <div class="absolute text-3xl transition-all duration-100 z-10" 
+                             :style="`left: ${player.x}px; top: ${player.y}px; transform: scaleX(${player.direction})`"
+                             :class="{ 'animate-bounce': player.moving }">🦆</div>
+                        
+                        <!-- Other Emus -->
+                        <template x-for="emu in otherEmus" :key="emu.id">
+                            <div class="absolute text-2xl animate-pulse" 
+                                 :style="`left: ${emu.x}px; top: ${emu.y}px`">🦆</div>
+                        </template>
+                        
+                        <!-- Game UI Overlay -->
+                        <div class="absolute top-4 left-4 bg-white/90 rounded-lg p-3 shadow-lg">
+                            <div class="text-sm space-y-1">
+                                <div><strong>Score:</strong> <span x-text="score"></span></div>
+                                <div><strong>Crops Destroyed:</strong> <span x-text="cropsDestroyed"></span>/20</div>
+                                <div><strong>Lives:</strong> <span x-text="lives"></span>/3</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Victory/Game Over Messages -->
+                        <div x-show="gameState === 'victory'" 
+                             class="absolute inset-0 bg-black/75 flex items-center justify-center z-20">
+                            <div class="bg-white rounded-2xl p-8 text-center shadow-2xl">
+                                <div class="text-6xl mb-4">🏆</div>
+                                <h3 class="text-3xl font-bold text-green-600 mb-2">Victory!</h3>
+                                <p class="text-gray-700 mb-4">The emus have successfully destroyed the crops!</p>
+                                <p class="text-sm text-gray-600 mb-4">Final Score: <span x-text="score" class="font-bold"></span></p>
+                                <button @click="resetGame()" 
+                                        class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                                    Play Again
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div x-show="gameState === 'gameOver'" 
+                             class="absolute inset-0 bg-black/75 flex items-center justify-center z-20">
+                            <div class="bg-white rounded-2xl p-8 text-center shadow-2xl">
+                                <div class="text-6xl mb-4">💀</div>
+                                <h3 class="text-3xl font-bold text-red-600 mb-2">Game Over!</h3>
+                                <p class="text-gray-700 mb-4">The military got you this time...</p>
+                                <p class="text-sm text-gray-600 mb-4">Final Score: <span x-text="score" class="font-bold"></span></p>
+                                <button @click="resetGame()" 
+                                        class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                                    Try Again
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Instructions Overlay -->
+                        <div x-show="gameState === 'instructions'" 
+                             class="absolute inset-0 bg-black/75 flex items-center justify-center z-20">
+                            <div class="bg-white rounded-2xl p-8 text-center shadow-2xl max-w-md">
+                                <div class="text-6xl mb-4">🦆</div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">How to Play</h3>
+                                <div class="text-left space-y-2 mb-6">
+                                    <p><strong>🎯 Objective:</strong> Destroy all 20 wheat crops</p>
+                                    <p><strong>⌨️ Controls:</strong> Use arrow keys to move</p>
+                                    <p><strong>🌾 Scoring:</strong> +10 points per crop destroyed</p>
+                                    <p><strong>💥 Avoid:</strong> Bullets from soldiers (3 lives)</p>
+                                    <p><strong>👥 Help:</strong> Other emus distract soldiers</p>
+                                </div>
+                                <button @click="startGame()" 
+                                        class="bg-amber-500 text-white px-8 py-3 rounded-lg hover:bg-amber-600 transition-colors text-lg font-semibold">
+                                    Start the War! ⚔️
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Game Controls Info -->
+                    <div class="mt-8 grid md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                                <span class="text-2xl mr-2">🎮</span>
+                                Game Controls
+                            </h3>
+                            <div class="space-y-2 text-gray-700">
+                                <div class="flex items-center space-x-3">
+                                    <div class="flex space-x-1">
+                                        <kbd class="px-2 py-1 bg-gray-200 rounded text-xs">↑</kbd>
+                                        <kbd class="px-2 py-1 bg-gray-200 rounded text-xs">↓</kbd>
+                                        <kbd class="px-2 py-1 bg-gray-200 rounded text-xs">←</kbd>
+                                        <kbd class="px-2 py-1 bg-gray-200 rounded text-xs">→</kbd>
+                                    </div>
+                                    <span>Move your emu</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🌾</span>
+                                    <span>Walk into crops to destroy them</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">💥</span>
+                                    <span>Avoid soldier bullets</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center">
+                                <span class="text-2xl mr-2">📜</span>
+                                Historical Context
+                            </h3>
+                            <div class="space-y-2 text-gray-700 text-sm">
+                                <p>In the real Great Emu War, the emus used superior tactics:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>Scattered when under fire</li>
+                                    <li>Regrouped quickly elsewhere</li>
+                                    <li>Used their speed (50 km/h) effectively</li>
+                                    <li>Overwhelmed military with numbers</li>
+                                </ul>
+                                <p class="mt-3 italic">Now you can experience their winning strategy!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-cinzel font-bold text-gray-800 mb-4">War Gallery</h2>
+                <p class="text-xl text-gray-600">Visual representations of this historic conflict</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" x-data="{ selectedImage: null }">
+                <!-- Gallery Items -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                     @click="selectedImage = 'soldiers'">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🪖</div>
+                                <p class="font-semibold text-lg">Australian Soldiers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-800 mb-2">The Military Forces</h3>
+                        <p class="text-gray-600 text-sm">Major Meredith and his team with their Lewis machine guns</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                     @click="selectedImage = 'emus'">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🦆</div>
+                                <p class="font-semibold text-lg">The Emu Army</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-800 mb-2">The Enemy Forces</h3>
+                        <p class="text-gray-600 text-sm">20,000 emus causing agricultural devastation</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                     @click="selectedImage = 'battlefield'">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🌾</div>
+                                <p class="font-semibold text-lg">The Battlefield</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-800 mb-2">Wheat Fields</h3>
+                        <p class="text-gray-600 text-sm">The agricultural lands under siege</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                     @click="selectedImage = 'weapons'">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🔫</div>
+                                <p class="font-semibold text-lg">Lewis Machine Guns</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-800 mb-2">Military Hardware</h3>
+                        <p class="text-gray-600 text-sm">The weapons that couldn't defeat the emus</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                     @click="selectedImage = 'aftermath'">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">📰</div>
+                                <p class="font-semibold text-lg">Media Coverage</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-800 mb-2">Press Reports</h3>
+                        <p class="text-gray-600 text-sm">How the world reacted to the emu victory</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                     @click="selectedImage = 'legacy'">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🏆</div>
+                                <p class="font-semibold text-lg">Historical Legacy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-800 mb-2">Cultural Impact</h3>
+                        <p class="text-gray-600 text-sm">How the Great Emu War became legend</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal -->
+            <div x-show="selectedImage" x-transition.opacity 
+                 x-cloak
+                 class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+                 @click="selectedImage = null"
+                 @keydown.escape.window="selectedImage = null">
+                <div class="bg-white rounded-2xl max-w-2xl w-full p-8" @click.stop>
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800" x-text="selectedImage ? selectedImage.charAt(0).toUpperCase() + selectedImage.slice(1) : ''"></h3>
+                        <button @click="selectedImage = null" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                    </div>
+                    
+                    <div x-show="selectedImage === 'soldiers'" class="text-center">
+                        <div class="text-8xl mb-4">🪖</div>
+                        <p class="text-gray-700">Major G.P.W. Meredith led the military operation with just two soldiers and two Lewis machine guns. Despite their military training, they were unprepared for the emus' guerrilla tactics.</p>
+                    </div>
+                    
+                    <div x-show="selectedImage === 'emus'" class="text-center">
+                        <div class="text-8xl mb-4">🦆</div>
+                        <p class="text-gray-700">The emus proved to be formidable opponents, using their speed (up to 50 km/h) and intelligence to outmaneuver the military forces. They would scatter when under fire and regroup elsewhere.</p>
+                    </div>
+                    
+                    <div x-show="selectedImage === 'battlefield'" class="text-center">
+                        <div class="text-8xl mb-4">🌾</div>
+                        <p class="text-gray-700">The wheat fields of Western Australia became the unlikely battlefield. The emus were destroying crops that were meant to help Australia recover from the Great Depression.</p>
+                    </div>
+                    
+                    <div x-show="selectedImage === 'weapons'" class="text-center">
+                        <div class="text-8xl mb-4">🔫</div>
+                        <p class="text-gray-700">The Lewis machine guns, effective in WWI, proved inadequate against the mobile emu forces. Frequent jams and the birds' ability to absorb multiple hits made them nearly useless.</p>
+                    </div>
+                    
+                    <div x-show="selectedImage === 'aftermath'" class="text-center">
+                        <div class="text-8xl mb-4">📰</div>
+                        <p class="text-gray-700">The international press had a field day with Australia's military defeat by birds. Headlines around the world mocked the unsuccessful campaign, making it a source of national embarrassment.</p>
+                    </div>
+                    
+                    <div x-show="selectedImage === 'legacy'" class="text-center">
+                        <div class="text-8xl mb-4">🏆</div>
+                        <p class="text-gray-700">Today, the Great Emu War is remembered as one of history's most unusual military campaigns. It has inspired countless memes, documentaries, and remains a beloved piece of Australian folklore.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-cinzel font-bold text-gray-800 mb-4">Unbelievable Facts</h2>
+                <p class="text-xl text-gray-600">Truth is stranger than fiction</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🎖️</div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Medal Worthy?</h3>
+                    <p class="text-gray-700">Some joked that the emus deserved military medals for their tactical superiority and successful defense of their territory.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🏃‍♂️</div>
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Speed Demons</h3>
+                    <p class="text-gray-700">Emus can run up to 50 km/h (31 mph) and change direction quickly, making them nearly impossible to target accurately.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold text-purple-800 mb-2">Natural Armor</h3>
+                    <p class="text-gray-700">Emus have thick skin and dense feathers that can absorb small caliber bullets, making them surprisingly resilient to gunfire.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🎭</div>
+                    <h3 class="text-xl font-bold text-red-800 mb-2">Comedy Gold</h3>
+                    <p class="text-gray-700">The event inspired countless jokes and became a source of national humor, with Australians embracing the absurdity of losing to birds.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="text-xl font-bold text-yellow-800 mb-2">History Books</h3>
+                    <p class="text-gray-700">This is the only "war" in history where the military officially acknowledged defeat to a non-human enemy force.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-4">🎬</div>
+                    <h3 class="text-xl font-bold text-indigo-800 mb-2">Pop Culture</h3>
+                    <p class="text-gray-700">The Great Emu War has been featured in documentaries, video games, and internet memes, cementing its place in popular culture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex justify-center items-center space-x-4 mb-6">
+                    <div class="w-12 h-12 emu-silhouette emu-bounce"></div>
+                    <h2 class="text-3xl font-cinzel font-bold">The Great Emu War</h2>
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user-tie text-white"></i>
+                    </div>
+                </div>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    A reminder that nature doesn't always lose to technology, and sometimes the most unlikely opponents can emerge victorious.
+                </p>
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-500">
+                        &copy; 2025 The Great Emu War Interactive Experience. 
+                        <span class="block mt-2">Built with Tailwind CSS & Alpine.js</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
+            class="fixed bottom-8 right-8 bg-gradient-to-r from-amber-500 to-orange-500 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-200 z-40">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- Custom JavaScript Files -->
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

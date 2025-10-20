@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Timeline - The Great Emu War Day by Day</title>
+    
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Detailed day-by-day timeline of the Great Emu War of 1932, including specific events, casualties, and strategic decisions.">
+    <meta name="keywords" content="Great Emu War timeline, 1932 Australia, detailed history, military campaign, emu war events">
+</head>
+
+<body class="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 min-h-screen font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-feather text-white text-lg"></i>
+                    </div>
+                    <h1 class="text-2xl font-cinzel font-bold text-gray-800">
+                        <a href="../index.html">The Great Emu War</a>
+                    </h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-600 hover:text-amber-600 transition-colors">Home</a>
+                    <a href="../index.html#timeline" class="text-gray-600 hover:text-amber-600 transition-colors">Timeline</a>
+                    <a href="../index.html#emu-game" class="text-gray-600 hover:text-amber-600 transition-colors">Play Game</a>
+                    <a href="./about.html" class="text-gray-600 hover:text-amber-600 transition-colors">About</a>
+                    <a href="./timeline-detail.html" class="text-amber-600 font-semibold">Detailed Timeline</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-cinzel font-bold text-gray-800 mb-6">
+                    Detailed <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Timeline</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A comprehensive day-by-day account of the Great Emu War, including specific events, strategic decisions, and their consequences.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Timeline Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative" x-data="{ activeMonth: 'october' }">
+                <!-- Month Selector -->
+                <div class="flex justify-center mb-12">
+                    <div class="bg-gray-100 p-1 rounded-lg flex space-x-1">
+                        <button @click="activeMonth = 'october'" 
+                                :class="{ 'bg-white shadow-sm': activeMonth === 'october', 'text-gray-600': activeMonth !== 'october' }"
+                                class="px-4 py-2 rounded-md font-medium transition-all">
+                            October 1932
+                        </button>
+                        <button @click="activeMonth = 'november'" 
+                                :class="{ 'bg-white shadow-sm': activeMonth === 'november', 'text-gray-600': activeMonth !== 'november' }"
+                                class="px-4 py-2 rounded-md font-medium transition-all">
+                            November 1932
+                        </button>
+                        <button @click="activeMonth = 'december'" 
+                                :class="{ 'bg-white shadow-sm': activeMonth === 'december', 'text-gray-600': activeMonth !== 'december' }"
+                                class="px-4 py-2 rounded-md font-medium transition-all">
+                            December 1932
+                        </button>
+                    </div>
+                </div>
+
+                <!-- October Timeline -->
+                <div x-show="activeMonth === 'october'" x-transition class="space-y-8">
+                    <h2 class="text-3xl font-cinzel font-bold text-gray-800 mb-8 text-center">October 1932 - The Crisis Builds</h2>
+                    
+                    <div class="timeline-event bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">1</div>
+                            <h3 class="text-xl font-bold text-red-800">October 1, 1932</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Emu Migration Intensifies:</strong> Large flocks of emus begin their seasonal migration, moving through the Campion district. Farmers report significant crop damage as approximately 20,000 emus move through wheat fields.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-red-300">
+                            <p class="text-sm text-red-700"><strong>Impact:</strong> Estimated 75% crop loss in affected areas</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">15</div>
+                            <h3 class="text-xl font-bold text-orange-800">October 15, 1932</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Farmers' Petition:</strong> Ex-servicemen farmers in the Campion and Walgoolan districts petition the Minister of Agriculture for assistance. They request military intervention to cull the emu population.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-orange-300">
+                            <p class="text-sm text-orange-700"><strong>Key Figure:</strong> James Mitchell, Premier of Western Australia, supports the petition</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-amber-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">28</div>
+                            <h3 class="text-xl font-bold text-amber-800">October 28, 1932</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Government Approval:</strong> The federal government approves military assistance. Major G.P.W. Meredith of the Royal Australian Artillery is assigned to lead the operation with two soldiers and two Lewis machine guns.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-amber-300">
+                            <p class="text-sm text-amber-700"><strong>Equipment:</strong> 10,000 rounds of ammunition allocated for the operation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- November Timeline -->
+                <div x-show="activeMonth === 'november'" x-transition class="space-y-8">
+                    <h2 class="text-3xl font-cinzel font-bold text-gray-800 mb-8 text-center">November 1932 - The War Begins</h2>
+                    
+                    <div class="timeline-event bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">2</div>
+                            <h3 class="text-xl font-bold text-green-800">November 2, 1932 - Day 1</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Operation Begins:</strong> Major Meredith and his team arrive in Campion. First engagement occurs when they encounter a flock of about 50 emus. The emus immediately scatter when fired upon, demonstrating their tactical awareness.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-green-300">
+                            <p class="text-sm text-green-700"><strong>Results:</strong> Only a few emus killed, machine gun jams due to dust</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">3</div>
+                            <h3 class="text-xl font-bold text-blue-800">November 3, 1932 - Day 2</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Tactical Adjustment:</strong> Meredith attempts to ambush emus at a local dam where they come to drink. However, the emus prove to be extremely wary and maintain scouts while the main flock drinks.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-blue-300">
+                            <p class="text-sm text-blue-700"><strong>Emu Tactics:</strong> Demonstrated organized behavior with sentinel posting</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">4</div>
+                            <h3 class="text-xl font-bold text-purple-800">November 4, 1932 - Day 3</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>The Famous Jam:</strong> During an encounter with a large flock, the machine gun jams at a critical moment. The emus, instead of fleeing, seem to taunt the soldiers before casually walking away.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-purple-300">
+                            <p class="text-sm text-purple-700"><strong>Media Report:</strong> "The emus have won the first round" - Perth Daily News</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">8</div>
+                            <h3 class="text-xl font-bold text-red-800">November 8, 1932 - First Withdrawal</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Tactical Retreat:</strong> After a week of limited success (only 12 emus confirmed killed), Major Meredith withdraws his forces. The operation is temporarily suspended due to poor results and equipment issues.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-red-300">
+                            <p class="text-sm text-red-700"><strong>Ammunition Used:</strong> 2,500 rounds for 12 confirmed kills</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">12</div>
+                            <h3 class="text-xl font-bold text-yellow-800">November 12, 1932 - Public Pressure</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Farmer Protests:</strong> Local farmers protest the withdrawal, claiming the emu problem is worsening. International media begins covering the story, often with amusement at Australia's "war" against birds.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-yellow-300">
+                            <p class="text-sm text-yellow-700"><strong>International Coverage:</strong> British newspapers mock the "Great Emu War"</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-indigo-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">13</div>
+                            <h3 class="text-xl font-bold text-indigo-800">November 13, 1932 - Operation Resumed</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Second Phase:</strong> Under continued pressure, the military operation resumes with new tactics. Attempts are made to drive emus into ambush positions, but the birds continue to demonstrate superior mobility.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-indigo-300">
+                            <p class="text-sm text-indigo-700"><strong>New Strategy:</strong> Mobile hunting parties replace fixed positions</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-pink-50 border-l-4 border-pink-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-pink-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">25</div>
+                            <h3 class="text-xl font-bold text-pink-800">November 25, 1932 - Limited Success</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Modest Gains:</strong> By the end of November, military forces report killing approximately 200 emus, but thousands remain. The cost in ammunition and man-hours is deemed excessive for the results achieved.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-pink-300">
+                            <p class="text-sm text-pink-700"><strong>Efficiency:</strong> Approximately 40 rounds per confirmed emu kill</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- December Timeline -->
+                <div x-show="activeMonth === 'december'" x-transition class="space-y-8">
+                    <h2 class="text-3xl font-cinzel font-bold text-gray-800 mb-8 text-center">December 1932 - The Final Chapter</h2>
+                    
+                    <div class="timeline-event bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">2</div>
+                            <h3 class="text-xl font-bold text-orange-800">December 2, 1932</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Final Push:</strong> Major Meredith makes one last concentrated effort, focusing on the largest remaining flocks. Despite improved tactics and positioning, the emus continue to outmaneuver the military forces.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-orange-300">
+                            <p class="text-sm text-orange-700"><strong>Emu Adaptation:</strong> Birds now flee at the first sight of military vehicles</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">10</div>
+                            <h3 class="text-xl font-bold text-red-800">December 10, 1932 - Operation Ends</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Official Withdrawal:</strong> The military operation is officially terminated. Major Meredith submits his final report, acknowledging the failure to significantly reduce the emu population despite extensive efforts.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-red-300">
+                            <p class="text-sm text-red-700"><strong>Final Tally:</strong> ~986 emus killed, ~10,000 rounds fired, 3 soldiers deployed</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-gray-50 border-l-4 border-gray-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-gray-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">15</div>
+                            <h3 class="text-xl font-bold text-gray-800">December 15, 1932 - Aftermath</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Alternative Solutions:</strong> The government announces a bounty system for emu culling, to be carried out by civilian hunters rather than military personnel. This proves more effective and cost-efficient.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-gray-300">
+                            <p class="text-sm text-gray-700"><strong>New Approach:</strong> Civilian bounty hunters kill over 57,000 emus in 6 months</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4">31</div>
+                            <h3 class="text-xl font-bold text-blue-800">December 31, 1932 - Historical Legacy</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>Year's End Reflection:</strong> As 1932 ends, the Great Emu War becomes a subject of both embarrassment and amusement. The event demonstrates the challenges of using conventional military tactics against unconventional opponents.
+                        </p>
+                        <div class="bg-white p-3 rounded border-l-2 border-blue-300">
+                            <p class="text-sm text-blue-700"><strong>Lesson Learned:</strong> Sometimes the most unusual problems require the most creative solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Summary -->
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-cinzel font-bold text-gray-800 mb-12 text-center">Final Statistics</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">39</div>
+                    <p class="text-gray-600">Total Days of Operation</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-4xl font-bold text-red-600 mb-2">986</div>
+                    <p class="text-gray-600">Emus Killed (Confirmed)</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-4xl font-bold text-amber-600 mb-2">10,000</div>
+                    <p class="text-gray-600">Rounds of Ammunition</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-4xl font-bold text-green-600 mb-2">9.86%</div>
+                    <p class="text-gray-600">Accuracy Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex justify-center items-center space-x-4 mb-6">
+                    <div class="w-12 h-12 emu-silhouette emu-bounce"></div>
+                    <h2 class="text-3xl font-cinzel font-bold">The Great Emu War</h2>
+                </div>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    A detailed chronicle of history's most unusual military campaign.
+                </p>
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-500">
+                        &copy; 2025 The Great Emu War Interactive Experience. 
+                        <span class="block mt-2">Historical accuracy maintained through primary source research.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

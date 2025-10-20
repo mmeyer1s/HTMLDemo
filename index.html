@@ -42,8 +42,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
+<!-- 
+    GREAT EMU WAR - INTERACTIVE HISTORICAL EXPERIENCE
+    
+    This website tells the story of Australia's Great Emu War of 1932 through
+    interactive content, animations, and an educational game. The site is built
+    with modern web technologies and follows accessibility best practices.
+    
+    Main Sections:
+    1. Hero Section - Introduction and call-to-action
+    2. Timeline Section - Interactive scroll-based timeline
+    3. Statistics Section - Animated counters and facts
+    4. Game Section - Playable emu war game
+    5. Gallery Section - Visual content with modals
+    6. Fun Facts Section - Additional educational content
+    
+    Technologies Used:
+    - HTML5 with semantic markup
+    - Tailwind CSS for styling
+    - Alpine.js for interactivity
+    - Custom CSS animations
+    - Responsive design principles
+    - Accessibility features (ARIA, keyboard navigation, screen reader support)
+-->
+
 <body class="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 min-h-screen font-inter">
-    <!-- Navigation -->
+    
+    <!-- ==============================================
+         NAVIGATION BAR
+         Fixed navigation with smooth scrolling links
+         ============================================== -->
     <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50" x-data="{ scrolled: false }" 
          @scroll.window="scrolled = window.pageYOffset > 50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +95,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ==============================================
+         HERO SECTION
+         Main landing area with title, intro, and CTAs
+         ============================================== -->
     <section class="relative pt-20 pb-16 overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
         <div class="absolute inset-0 bg-gradient-to-br from-amber-100 via-orange-100 to-red-100 opacity-75"></div>
@@ -120,7 +152,10 @@
         </div>
     </section>
 
-    <!-- Timeline Section -->
+    <!-- ==============================================
+         TIMELINE SECTION
+         Interactive timeline with scroll animations
+         ============================================== -->
     <section id="timeline" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -258,7 +293,10 @@
         </div>
     </section>
 
-    <!-- Statistics Section -->
+    <!-- ==============================================
+         STATISTICS SECTION
+         Animated counters showing war statistics
+         ============================================== -->
     <section id="statistics" class="py-20 bg-gradient-to-br from-slate-50 to-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -346,7 +384,10 @@
         </div>
     </section>
 
-    <!-- Interactive Emu Game Section -->
+    <!-- ==============================================
+         INTERACTIVE EMU GAME SECTION
+         Playable game where users control emus
+         ============================================== -->
     <section id="emu-game" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -504,7 +545,10 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- ==============================================
+         GALLERY SECTION
+         Visual content with modal functionality
+         ============================================== -->
     <section id="gallery" class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -657,7 +701,10 @@
         </div>
     </section>
 
-    <!-- Fun Facts Section -->
+    <!-- ==============================================
+         FUN FACTS SECTION
+         Additional educational content
+         ============================================== -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -705,7 +752,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ==============================================
+         FOOTER
+         Site footer with credits and links
+         ============================================== -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
@@ -729,7 +779,10 @@
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
+    <!-- ==============================================
+         SCROLL TO TOP BUTTON
+         Fixed button for easy navigation back to top
+         ============================================== -->
     <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
             class="fixed bottom-8 right-8 bg-gradient-to-r from-amber-500 to-orange-500 text-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-200 z-40">
         <i class="fas fa-arrow-up text-xl"></i>
